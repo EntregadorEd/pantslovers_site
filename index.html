@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantslovers</title>
+  <link rel="shortcut icon" type="image/png" href="https://th.bing.com/th/id/OIP.NzB0qLwfiZDHKd0kUUE0ZAAAAA?r=0&rs=1&pid=ImgDetMain">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-image:
+        linear-gradient(rgba(4,18,28,0.75), rgba(4,18,28,0.88)),
+        url(imagens/background_5.jpg);
+    }
+
+    .grande {
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 0.6s ease both;
+    }
+
+    .grande-titulo {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+
+    .grande-titulo .word-pants {
+      color: var(--cyan);
+      text-shadow: 0 0 30px rgba(0,229,212,0.5);
+    }
+
+    .grande-titulo .word-lovers {
+      color: var(--pink);
+      text-shadow: 0 0 30px rgba(232, 64, 198, 0.5);
+    }
+
+    .textin {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  align-items: start;
+}
+
+
+    .card-title {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+    }
+
+.card-sobre,
+.card-regras {
+  max-width: 380px;
+  justify-self: center;
+}
+.card-sobre img,
+.card-regras img {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--glass-border);
+}
+
+    .parceria-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(0,229,212,0.06);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1rem;
+      margin-bottom: 1rem;
+      transition: all 0.25s;
+    }
+
+    .parceria-item:hover {
+      background: rgba(0,229,212,0.12);
+      border-color: var(--cyan);
+      transform: translateX(4px);
+    }
+
+    .parceria-item img {
+      height: 52px;
+      width: 52px;
+      border-radius: 8px;
+      padding: 4px;
+    }
+
+    .parceria-item .parceria-info h3 {
+      font-family: var(--font-title);
+      font-size: 0.95rem;
+      color: var(--cyan);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .parceria-info p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .parceria-phantom {
+      font-size: 0.8rem;
+      font-style: italic;
+      font-family: var(--font-mono);
+    }
+
+    .donate-block {
+      padding: 1rem;
+      margin: 1rem;
+      text-align: center;
+    }
+
+    .donate-block h3 {
+      font-family: var(--font-title);
+      font-size: 1rem;
+      color: var(--pink);
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .donate-block img { width: 100%; border-radius: 8px; }
+
+    .links-block {
+      background: rgba(0,229,212,0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      margin-top: 2.75rem;
+    }
+
+    .links-block h3 {
+      font-family: var(--font-title);
+      font-size: 0.9rem;
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+    }
+
+    .links-block .social-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--cyan);
+      padding: 0.4rem 0;
+      transition: color 0.2s;
+    }
+
+    .links-block .social-link:hover { color: var(--pink); }
+
+    .exclamacoes-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin: 0.75rem 0 0.35rem;
+    }
+
+    .exclamacoes-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
+    .exclamacoes-grid span {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      background: rgba(0,229,212,0.08);
+      border: 1px solid rgba(0,229,212,0.2);
+      color: var(--cyan);
+      border-radius: 6px;
+      padding: 0.15rem 0.5rem;
+      transition: all 0.2s;
+    }
+
+    .exclamacoes-grid span:hover {
+      background: rgba(0,229,212,0.18);
+      border-color: var(--cyan);
+    }
+
+    .videos-section { margin-bottom: 2.5rem; }
+
+    .videos-title {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      color: var(--pink);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1.25rem;
+    }
+
+    .shorts-row {
+      display: flex;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .shorts-video {
+      flex: 0 0 min(300px, 100%);
+      aspect-ratio: 9/16;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .shorts-video iframe,
+    .video-wide iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .video-wide {
+      margin-top: 2rem;
+    }
+
+    .video-wide-frame {
+      aspect-ratio: 16/9;
+      border-radius: var(--radius);
+      overflow: hidden;
+      max-width: 720px;
+      border: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .shuckle-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .paras-img {
+      width: 100%;
+      max-width: 760px;
+      border-radius: var(--radius);
+      border: 2px solid var(--navy);
+      box-shadow: var(--shadow-cyan);
+    }
+
+    .shuckle-img {
+      width: 300px;
+      max-width: 100%;
+      border-radius: var(--radius);
+      border: 2px solid var(--pink);
+      box-shadow: var(--shadow-red);
+      animation: glow-pulse 2.5s ease-in-out infinite;
+    }
+
+    .pare-title {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      background: linear-gradient(100deg, var(--pink), var(--cyan));
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .pare-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .bits-section { margin-bottom: 2rem; }
+
+    .bits-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .bit-card {
+      border-radius: var(--radius);
+      padding: 1rem;
+      width: 160px;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: transform 0.25s, box-shadow 0.25s;
+      cursor: default;
+    }
+
+    .bit-card:hover {
+      transform: translateY(-6px) scale(1.04);
+    }
+
+    .bit-amount {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+
+    .bit-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 0.5rem auto;
+      display: block;
+    }
+
+    .bit-name {
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .bit-chola    { background: rgba(1,248,223,0.15);  border-color: rgba(1,248,223,0.4);  color: #01f8df; }
+    .bit-amigos   { background: rgba(78,141,255,0.15); border-color: rgba(78,141,255,0.4); color: #4e8dff; }
+    .bit-robo     { background: rgba(180,180,180,0.12);border-color: rgba(180,180,180,0.3);color: #c0c0c0; }
+    .bit-maioral  { background: rgba(215,209,211,0.12);border-color: rgba(100,120,220,0.4);color: #d7d1d3; }
+    .bit-geladeira{ background: rgba(255,74,207,0.15); border-color: rgba(255,74,207,0.4); color: #ff4acf; }
+    .bit-pressao  { background: rgba(175,133,255,0.15);border-color: rgba(175,133,255,0.4);color: #af85ff; }
+    .bit-pinto    { background: rgba(230,206,85,0.15); border-color: rgba(230,206,85,0.4); color: #e6ce55; }
+
+    @media (max-width: 600px) {
+      .bit-card { width: 140px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/e7f64b57-118c-4073-9d34-3a8b1b44bbae-profile_image-300x300.png" alt="Pants" class="pantito">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Início</a></li>
+      <li><a href="programacao.html">Programação</a></li>
+      <li><a href="bagres.html">Bagres</a></li>
+      <li><a href="chat.html">Chat</a></li>
+      <li><a href="tierlist.html">Tierlist</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+
+<div class="page-content">
+
+  <div class="grande">
+    <h1 class="grande-titulo">
+      <span class="word-pants">Pants</span><span class="word-lovers">lovers</span>
+    </h1>
+    <p class="textin">Esse é um site que eu entregador ed fiz pra comunidade do pants, porque? não sei</p>
+  </div>
+
+  <div class="main-grid">
+
+    <div class="glass-card card-sobre animate-in" style="animation-delay:0.1s">
+      <p class="card-title">O que é o Pants?</p>
+      <img src="https://panels.twitch.tv/panel-63772310-image-3bea2ddf-6f74-4fd7-a636-ab6b27de6d7e" alt="Sobre">
+    </div>
+
+    <div class="glass-card card-regras animate-in" style="animation-delay:0.2s">
+      <p class="card-title">Regras do Pants</p>
+      <img src="https://panels.twitch.tv/panel-63772310-image-9814fcbc-d16b-400e-aafb-b081f04f1137" alt="Regras">
+    </div>
+
+    <div class="glass-card card-parcerias animate-in" style="animation-delay:0.3s">
+      <p class="card-title">Parcerias</p>
+
+      <a href="https://www.nuuvem.com" target="_blank">
+        <img src="https://panels.twitch.tv/panel-63772310-image-ddaa9ffb-26b3-4c2a-86fc-6ef9bf48a4f2" alt="Nuuvem" style="width:100%;border-radius:8px;margin-bottom:0.75rem">
+      </a>
+
+      <div class="parceria-item">
+        <img src="imagens/Kojima.png" alt="Kojima">
+        <div class="parceria-info">
+          <h3>Kojima</h3>
+          <p class="parceria-phantom">Tá ele não tem, mas quem sabe...</p>
+        </div>
+      </div>
+
+      <div class="parceria-item">
+        <img src="imagens/energetico.png" alt="Energético">
+        <div class="parceria-info">
+          <h3>Energético</h3>
+        </div>
+      </div>
+
+      <div class="parceria-item">
+        <img src="imagens/exitlag.png" alt="Exit Lag">
+        <div class="parceria-info">
+          <h3>Exit Lag</h3>
+        </div>
+      </div>
+
+      <img src="https://panels.twitch.tv/panel-63772310-image-cfeb588a-3ef3-4ce7-9598-5d747c27d511" alt="Email" style="width:100%;border-radius:8px;margin:0.75rem 0 0.5rem">
+
+      <div class="donate-block">
+        <h3>Faz um pix pra ele aí pô</h3>
+        <img src="https://panels.twitch.tv/panel-63772310-image-238867c9-30a8-4a80-baa1-06dfebf992d1" alt="Donate"></a>
+      </div>
+
+      <div class="links-block">
+        <h3>Links & Redes</h3>
+        <a href="https://linktr.ee/pants_jpeg" class="social-link" target="_blank">→ Redes Sociais</a>
+        <p class="exclamacoes-label">Exclamações da Live</p>
+        <div class="exclamacoes-grid">
+          <span>!social</span><span>!d20</span><span>!humilde</span><span>!clip</span>
+          <span>!pix</span><span>!chat</span><span>!onlyfans</span><span>!chavo</span>
+          <span>!dilma</span><span>!discord</span><span>!heitor</span><span>!minipants</span>
+          <span>!malta</span><span>!zara</span><span>!shuckle</span><span>!pokedex</span>
+          <span>!lurk</span><span>!nuuvem</span><span>!comandos</span><span>!leoportomaia</span>
+          <span>!morreu</span><span>!bits</span><span>!bagre</span><span>!esqueledro</span>
+          <span>!followage</span><span>!aqualia</span><span>!y</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="videos-section animate-in" style="animation-delay:0.4s">
+    <p class="videos-title">Você provavelmente chegou aqui com esses vídeos</p>
+    <div class="shorts-row">
+      <div class="shorts-video">
+        <iframe src="https://www.youtube.com/embed/QkW3wUoAwy0" title="YouTube Shorts 1"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="shorts-video">
+        <iframe src="https://www.youtube.com/embed/UQ2FY1uPCXI" title="YouTube Shorts 2"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <div class="video-wide animate-in" style="animation-delay:0.5s">
+      <p class="videos-title" style="margin-top:1.5rem">Mas poucos chegaram por isso...</p>
+      <div class="video-wide-frame">
+        <iframe src="https://www.youtube.com/embed/oJ_N05lRGOQ" title="Vídeo Horizontal"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="shuckle-section animate-in" style="animation-delay:0.55s">
+    <p class="pare-title">PARE</p>
+    <img src="imagens/paras.png" alt="Paras" class="paras-img">
+    <p class="pare-sub">Você ainda não agradeceu a shuckle hoje? COVARDE!</p>
+    <img src="https://media1.tenor.com/m/7OrgmrS7M2EAAAAC/cute-pokemon.gif" alt="GIF Shuckle" class="shuckle-img">
+  </div>
+
+  <!-- BITS -->
+  <div class="bits-section animate-in" style="animation-delay:0.6s">
+    <p class="section-title">Tabela de Bits</p>
+    <div class="bits-grid">
+      <div class="bit-card bit-chola">
+        <div class="bit-amount">25 BITS</div>
+        <img src="imagens/chola mais.jpg" alt="Chola Mais">
+        <div class="bit-name">Chola Mais</div>
+      </div>
+      <div class="bit-card bit-amigos">
+        <div class="bit-amount">50 BITS</div>
+        <img src="imagens/amigos.jpg" alt="Amigos">
+        <div class="bit-name">Amigos da Justiça</div>
+      </div>
+      <div class="bit-card bit-robo">
+        <div class="bit-amount">75 BITS</div>
+        <img src="imagens/robogigante.jpg" alt="Robô">
+        <div class="bit-name">Robô Gigante</div>
+      </div>
+      <div class="bit-card bit-maioral">
+        <div class="bit-amount">100 BITS</div>
+        <img src="imagens/MAIORAL.jpg" alt="Maioral">
+        <div class="bit-name">Maioral</div>
+      </div>
+      <div class="bit-card bit-geladeira">
+        <div class="bit-amount">150 BITS</div>
+        <img src="imagens/geladeira.jpg" alt="Geladeira">
+        <div class="bit-name">Geladeira Tsunami</div>
+      </div>
+      <div class="bit-card bit-pressao">
+        <div class="bit-amount">200 BITS</div>
+        <img src="imagens/ecoeco.jpg" alt="Pressão">
+        <div class="bit-name">Sente a Pressão</div>
+      </div>
+      <div class="bit-card bit-pinto">
+        <div class="bit-amount">225 BITS</div>
+        <img src="imagens/pintao.jpg" alt="Pintão">
+        <div class="bit-name">Pintão</div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="by-ed">By Ed (Sem GPT)</footer>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

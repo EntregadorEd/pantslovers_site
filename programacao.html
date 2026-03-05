@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantslovers</title>
+  <link rel="shortcut icon" type="image/png" href="https://th.bing.com/th/id/OIP.NzB0qLwfiZDHKd0kUUE0ZAAAAA?r=0&rs=1&pid=ImgDetMain">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-image:
+        linear-gradient(rgba(4,18,28,0.78), rgba(4,18,28,0.9)),
+        url(imagens/background_2.jpg);
+    }
+
+    .prog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card-horario-fake img {
+      width: 100%;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--glass-border);
+      margin-top: 0.75rem;
+    }
+
+    .horario-real-box {
+      margin-top: 1rem;
+      background: rgba(232, 64, 201, 0.08);
+      border: 1px solid rgba(232, 64, 229, 0.25);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .horario-real-box p {
+      font-size: 1.1rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .horario-real-box .destaque {
+      color: var(--pink);
+      font-weight: 700;
+      font-family: var(--font-title);
+      font-size: 1.2rem;
+    }
+
+    .cronograma-list {
+      list-style: none;
+      margin-top: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cronograma-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: rgba(0,229,212,0.05);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 1rem;
+      color: var(--text);
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .cronograma-list li:hover {
+      background: rgba(0,229,212,0.1);
+      border-color: var(--cyan);
+      transform: translateX(4px);
+    }
+
+    .cronograma-list li .dia {
+      font-family: var(--font-title);
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--cyan);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .cronograma-list li .atividade {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .cronograma-list li.especial {
+      border-color: rgba(232, 64, 229, 0.25);
+      background: rgba(232, 64, 201, 0.08);
+    }
+    .cronograma-list li.especial .dia { color: var(--pink); }
+    .cronograma-list li.especial:hover { border-color: var(--pink); background: rgba(232, 64, 229, 0.25); }
+
+    .cronograma-list li .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--cyan);
+      border-radius: 50%;
+    }
+      .cronograma-list li.especial .dot {
+      width: 6px;
+      height: 6px;
+      background: var(--pink);
+      border-radius: 50%;
+    }
+    .especial .dot { background: var(--pink); box-shadow: 0 0 6px var(--pink); }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/e7f64b57-118c-4073-9d34-3a8b1b44bbae-profile_image-300x300.png" alt="Pants" class="pantito">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="programacao.html" class="active">Programação</a></li>
+      <li><a href="bagres.html">Bagres</a></li>
+      <li><a href="chat.html">Chat</a></li>
+      <li><a href="tierlist.html">Tierlist</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+<div class="divider"></div>
+
+<div class="page-content">
+
+  <p class="section-title" style="margin-top:1.5rem">Programação</p>
+
+  <div class="prog-grid">
+
+    <div class="glass-card card-horario-fake animate-in" style="animation-delay:0.1s">
+      <p class="card-title">Horário Fake</p>
+      <img src="https://panels.twitch.tv/panel-63772310-image-4dc126c7-47fe-4484-9643-5bfa381fa5b4" alt="Horário Fake">
+    </div>
+
+
+    <div class="glass-card animate-in" style="animation-delay:0.2s">
+      <p class="card-title">Horário Real</p>
+      <div class="horario-real-box">
+        <p>As 22:30 quando ele normalmente diz que vai ser as 21:30
+        e obrigatoriamente <span class="destaque">depois de cagar.</span></p>
+      </div>
+    </div>
+
+    <div class="glass-card animate-in" style="animation-delay:0.3s">
+      <p class="card-title">Cronograma</p>
+      <ul class="cronograma-list">
+        <li><span class="dot"></span><span class="dia">Segunda</span><span class="atividade">Jogar</span></li>
+        <li><span class="dot"></span><span class="dia">Terça</span><span class="atividade">Ver lances do hóquei e do futebol</span></li>
+        <li><span class="dot"></span><span class="dia">Quarta</span><span class="atividade" style="text-decoration: line-through;">Desenhar</span><span class="atividade" style="margin-left: 0.5rem; color: var(--pink);">Jogar</span></li>
+        <li><span class="dot"></span><span class="dia">Quinta</span><span class="atividade">Poké-day</span></li>
+        <li><span class="dot"></span><span class="dia">Sexta</span><span class="atividade">Jogar com Chat</span></li>
+        <li><span class="dot"></span><span class="dia">Sábado</span><span class="atividade">Jogar</span></li>
+        <li class="especial"><span class="dot"></span><span class="dia">1ª Quinta</span><span class="atividade">QEEP — Quem é esse Pokémon</span></li>
+        <li class="especial"><span class="dot"></span><span class="dia">Últ. Sexta</span><span class="atividade" style="text-decoration: line-through;">Torneio no Poké Showdown</span></li>
+        <li class="especial"><span class="dot"></span><span class="dia">Sempre</span><span class="atividade">Em jogo do Botafogo e dos ducks</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <footer class="by-ed">By Ed (Sem GPT)</footer>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

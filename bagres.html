@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantslovers</title>
+  <link rel="shortcut icon" type="image/png" href="https://th.bing.com/th/id/OIP.NzB0qLwfiZDHKd0kUUE0ZAAAAA?r=0&rs=1&pid=ImgDetMain">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-image:
+        linear-gradient(rgba(4,18,28,0.78), rgba(4,18,28,0.9)),
+        url(imagens/background_3.jpg);
+    }
+
+    .bagres-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .card-bagre {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      animation: fadeInUp 0.5s ease both;
+    }
+
+    .card-bagre:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 30px rgba(0,229,212,0.25), 0 16px 48px rgba(0,0,0,0.5);
+      border-color: rgba(0,229,212,0.4);
+    }
+
+    .card-bagre-imagem,
+    .card-bagre video {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-bagre-body {
+      padding: 0.75rem 1rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .card-bagre-titulo {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .card-bagre-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      flex: 1;
+    }
+
+    .card-bagre-desc a {
+      color: var(--pink);
+      font-weight: 600;
+    }
+
+    .card-bagre-desc a:hover { color: var(--cyan); }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--pink);
+      border: 1px solid rgba(232,64,64,0.3);
+      background: rgba(232,64,64,0.08);
+      border-radius: 99px;
+      padding: 0.15rem 0.5rem;
+      margin-top: 0.25rem;
+      width: fit-content;
+      letter-spacing: 0.06em;
+    }
+
+    .live-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--pink);
+      border-radius: 50%;
+      animation: glow-pulse 1.5s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/e7f64b57-118c-4073-9d34-3a8b1b44bbae-profile_image-300x300.png" alt="Pants" class="pantito">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="programacao.html">Programação</a></li>
+      <li><a href="bagres.html" class="active">Bagres</a></li>
+      <li><a href="chat.html">Chat</a></li>
+      <li><a href="tierlist.html">Tierlist</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+<div class="divider"></div>
+
+<div class="page-content">
+
+  <p class="section-title" style="margin-top:1.5rem">Bagres</p>
+
+  <div class="bagres-grid">
+
+    <div class="card-bagre" style="animation-delay:0.05s">
+      <img src="imagens/dick vigarista.jpg" alt="Pants" class="card-bagre-imagem">
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">PANTS</p>
+        <p class="card-bagre-desc">Nosso bagre de sempre</p>
+      </div>
+    </div>
+
+    <div class="card-bagre" style="animation-delay:0.1s">
+      <img src="imagens/malta_img.png" alt="Malta" class="card-bagre-imagem">
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">ASTROMALTA</p>
+        <p class="card-bagre-desc">Tri campeão do showdown, é um gostoso, e começou a fazer <a href="https://www.twitch.tv/astromalta" target="_blank">live</a></p>
+      </div>
+    </div>
+
+    <div class="card-bagre" style="animation-delay:0.15s">
+      <img src="imagens/peres.png" alt="Peres" class="card-bagre-imagem">
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">PERES</p>
+        <p class="card-bagre-desc">Passa mais tempo jogando wow do que vivendo, profissional em nuzlocke e em big mac</p>
+      </div>
+    </div>
+
+    <div class="card-bagre" style="animation-delay:0.2s">
+      <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/34cb5187-5909-411d-8fb3-dd8127ea98dc-profile_image-70x70.png" alt="Esqueledro" class="card-bagre-imagem">
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">ESQUELEDRO</p>
+        <p class="card-bagre-desc">Pedro ou Esqueledro tanto faz, zubat, swalot e nosepass no rank S definem esse homem, além de sua careca brilhante ele também <a href="https://www.twitch.tv/esqueledro" target="_blank">"faz live"</a></p>
+      </div>
+    </div>
+
+    <div class="card-bagre" style="animation-delay:0.25s">
+      <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/67f5b0e7-6a7d-4329-b126-112cd1334c24-profile_image-70x70.png" alt="Wesley" class="card-bagre-imagem">
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">WESLEY</p>
+        <p class="card-bagre-desc">Melhor mod da live, profissional e amante de lol e de alola, mas não pergunte a ele do hk</p>
+      </div>
+    </div>
+
+    <div class="card-bagre" style="animation-delay:0.3s">
+      <img src="imagens/Luke.png" alt="Luke" class="card-bagre-imagem">
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">LUKE</p>
+        <p class="card-bagre-desc">Irmãozão do pants, viciadasso em valorant</p>
+      </div>
+    </div>
+
+    <div class="card-bagre" style="animation-delay:0.35s">
+      <video class="card-bagre-imagem" controls>
+        <source src="imagens/heitor.mp4" type="video/mp4">
+      </video>
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">HEITOR</p>
+      </div>
+    </div>
+
+    <div class="card-bagre" style="animation-delay:0.4s" data-name="zararthur">
+      <img src="imagens/zara.png" alt="Zarabagre" class="card-bagre-imagem">
+      <div class="card-bagre-body">
+        <p class="card-bagre-titulo">ZARARTHUR</p>
+        <p class="card-bagre-desc">Mais conhecido como zarajudas, tem 2 folgas no mês, faz dupla dinâmica com jonas, uns desenho e umas piada merda, e é esposa do leoportomaia</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="by-ed">By Ed (Sem GPT)</footer>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

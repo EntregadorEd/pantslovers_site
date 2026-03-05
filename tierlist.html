@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantslovers</title>
+  <link rel="shortcut icon" type="image/png" href="https://th.bing.com/th/id/OIP.NzB0qLwfiZDHKd0kUUE0ZAAAAA?r=0&rs=1&pid=ImgDetMain">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-image:
+        linear-gradient(rgba(4,18,28,0.78), rgba(4,18,28,0.9)),
+        url(imagens/background_4.jpg);
+    }
+
+    .tl-intro {
+      background: rgba(232, 64, 187, 0.08);
+      border: 1px solid var(--cyan);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0 2rem;
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      line-height: 1.6;
+    }
+
+    .tl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .tl-card {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      animation: fadeInUp 0.5s ease both;
+    }
+
+    .tl-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(0,229,212,0.2), 0 12px 40px rgba(0,0,0,0.5);
+      border-color: rgba(0,229,212,0.35);
+    }
+
+    .tl-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+
+    .tl-card-title {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .tl-card-verdict {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--pink);
+      border: 1px solid rgba(232,64,64,0.25);
+      background: rgba(232,64,64,0.08);
+      border-radius: 99px;
+      padding: 0.15rem 0.6rem;
+      letter-spacing: 0.06em;
+      text-align: right;
+      max-width: 180px;
+    }
+
+    .tl-card img {
+      width: 100%;
+      display: block;
+      max-height: 420px;
+      object-fit: contain;
+      background: rgba(0,0,0,0.3);
+      padding: 0.5rem;
+    }
+
+    .tl-card .tl-wide-img {
+      max-height: none;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/e7f64b57-118c-4073-9d34-3a8b1b44bbae-profile_image-300x300.png" alt="Pants" class="pantito">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="programacao.html">Programação</a></li>
+      <li><a href="bagres.html">Bagres</a></li>
+      <li><a href="chat.html">Chat</a></li>
+      <li><a href="tierlist.html" class="active">Tierlist</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+<div class="divider"></div>
+
+<div class="page-content">
+
+  <p class="section-title" style="margin-top:1.5rem">Tierlists</p>
+
+  <div class="tl-intro">
+    Tier list feita pelos mais renomados especialistas...<br>
+    tá, foi feita só por criminosos em opinião.
+  </div>
+
+  <div class="tl-grid">
+
+    <div class="tl-card" style="animation-delay:0.05s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 1</p>
+        <span class="tl-card-verdict">Horrível</span>
+      </div>
+      <img src="imagens/tierlist1.png" alt="Gen 1">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.08s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 2</p>
+        <span class="tl-card-verdict">Até que é boa</span>
+      </div>
+      <img src="imagens/tierlist2.png" alt="Gen 2">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.11s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 3</p>
+        <span class="tl-card-verdict">Aceitável</span>
+      </div>
+      <img src="imagens/tierlist3.png" alt="Gen 3">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.14s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 4</p>
+        <span class="tl-card-verdict">A melhor entre as piores</span>
+      </div>
+      <img src="imagens/tierlist4.png" alt="Gen 4">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.17s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 5</p>
+        <span class="tl-card-verdict">Meu deus...</span>
+      </div>
+      <img src="imagens/tierlist5.png" alt="Gen 5">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.2s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 6</p>
+        <span class="tl-card-verdict">A dex já é ruim, então meh</span>
+      </div>
+      <img src="imagens/tierlist6.png" alt="Gen 6">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.23s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 7</p>
+        <span class="tl-card-verdict">Todos deviam ser presos</span>
+      </div>
+      <img src="imagens/tierlist7.png" alt="Gen 7">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.26s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 8</p>
+        <span class="tl-card-verdict">Me dá ânsia de vômito</span>
+      </div>
+      <img src="imagens/tierlist8.png" alt="Gen 8">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.29s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Gen 9</p>
+        <span class="tl-card-verdict">É..., é o que tem</span>
+      </div>
+      <img src="imagens/tierlist9.png" alt="Gen 9">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.32s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Megas</p>
+        <span class="tl-card-verdict">AGORA, todos têm que ser presos</span>
+      </div>
+      <img src="imagens/tierlistmega.png" alt="Megas" class="tl-wide-img">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.35s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Tipos</p>
+        <span class="tl-card-verdict">Incompleta, mas ainda horrível</span>
+      </div>
+      <img src="imagens/tierlistnormal.png" alt="Normal">
+    </div>
+
+    <div class="tl-card" style="animation-delay:0.38s">
+      <div class="tl-card-header">
+        <p class="tl-card-title">Desenhos</p>
+        <span class="tl-card-verdict">Nunca vi tanta crueldade</span>
+      </div>
+      <img src="imagens/desenhos.png" alt="Desenhos">
+    </div>
+
+  </div>
+
+  <footer class="by-ed">By Ed (Sem GPT)</footer>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+</script>
+
+</body>
+</html>

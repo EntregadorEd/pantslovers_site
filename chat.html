@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pantslovers</title>
+  <link rel="shortcut icon" type="image/png" href="https://th.bing.com/th/id/OIP.NzB0qLwfiZDHKd0kUUE0ZAAAAA?r=0&rs=1&pid=ImgDetMain">
+  <link rel="stylesheet" href="shared.css">
+  <style>
+    body {
+      background-image:
+        linear-gradient(rgba(4,18,28,0.78), rgba(4,18,28,0.9)),
+        url(imagens/background_6.jpg);
+    }
+
+    .chat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .card-chat {
+      background: var(--card-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+      animation: fadeInUp 0.5s ease both;
+    }
+
+    .card-chat:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 28px rgba(0,229,212,0.2), 0 12px 40px rgba(0,0,0,0.5);
+      border-color: rgba(0,229,212,0.35);
+    }
+
+    .card-chat-img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-chat-body {
+      padding: 0.75rem 0.9rem 1rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .card-chat-nome {
+      font-family: var(--font-title);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .card-chat-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .num-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      opacity: 0.5;
+    }
+
+    /* Search bar */
+    .search-bar {
+      position: relative;
+      max-width: 360px;
+      margin-bottom: 1.5rem;
+    }
+
+    .search-bar input {
+      width: 100%;
+      background: rgba(0,229,212,0.06);
+      border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm);
+      padding: 0.65rem 1rem 0.65rem 2.5rem;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--cyan);
+      background: rgba(0,229,212,0.1);
+    }
+
+    .search-bar input::placeholder { color: var(--text-muted); }
+
+    .search-bar::before {
+      content: '🔍';
+      position: absolute;
+      left: 0.75rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.85rem;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <img src="https://static-cdn.jtvnw.net/jtv_user_pictures/e7f64b57-118c-4073-9d34-3a8b1b44bbae-profile_image-300x300.png" alt="Pants" class="pantito">
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Início</a></li>
+      <li><a href="programacao.html">Programação</a></li>
+      <li><a href="bagres.html">Bagres</a></li>
+      <li><a href="chat.html" class="active">Chat</a></li>
+      <li><a href="tierlist.html">Tierlist</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+</header>
+<div class="divider"></div>
+
+<div class="page-content">
+
+  <p class="section-title" style="margin-top:1.5rem">O Chat</p>
+
+
+  <div class="chat-grid" id="chatGrid">
+
+    <div class="card-chat" style="animation-delay:0.03s" data-name="leoportomaia">
+      <img src="imagens/leoportomaia.jpg" alt="Leoportomaia" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">LEOPORTOMAIA</p>
+        <p class="card-chat-desc">Nunca pergunte a um homem seu salário, a uma mulher a sua idade e ao leo sobre a dupla Terans e Renato Augusto.</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.05s" data-name="the bear">
+      <img src="imagens/thebear.jpg" alt="TheBear" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">THE BEAR</p>
+        <p class="card-chat-desc">MAIORAL, HERÓI DE TODOS NÓS, FAZ JUSTIÇA PRA VALER, LUTA PRA VENCER...</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.07s" data-name="sattsug">
+      <img src="imagens/Satt.jpeg" alt="Sattsug" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">SATTSUG</p>
+        <p class="card-chat-desc">PARA DE ESTOURAR BALÃO E VAI PEGAR TEU FRANGO, e também joga dredge.</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.09s" data-name="aqualia">
+      <img src="imagens/aqua.jpg" alt="Aqualia" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">AQUALIA</p>
+        <p class="card-chat-desc">"Ain mas o gyarados é dragão porque o lance disse, ain mas o dedenne é o melhor pikaclone, ain mas não é green é blue🤓☝️" disse a genshiana.</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.11s" data-name="farinha">
+      <img src="imagens/farinha.jpg" alt="Farinha" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">FARINHA</p>
+        <p class="card-chat-desc">"Eu finjo que não percebo, mas tudo está sendo observado", disse farinha de milho verde pela 452° vez, melhor lutador de jiu jitsu da live (e o único).</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.13s" data-name="netin">
+      <img src="imagens/netin.jpg" alt="Netin" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">NETIN</p>
+        <p class="card-chat-desc">O maior dos ilusionistas imorais, revolucionou completamente o QEEP, e ainda faz desenhos muito foda.</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.15s" data-name="jonasbro">
+      <img src="imagens/jonasbro.png" alt="Jonasbro" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">JONASBRO</p>
+        <p class="card-chat-desc">Bebê reborn do chat, criativo porém irresponsável, faz uma dupla dinâmica com zara, cria do baudino, chikoritabro veneno pros íntimos.</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.17s" data-name="lkv1">
+      <img src="imagens/lkv1.jpeg" alt="LKV1" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">LKV1</p>
+        <p class="card-chat-desc">Tá vendo aquele controle que o pants usa pra jogar? é, quem deu pra ele tem nome, e se chama lucaskv1.</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.19s" data-name="nokoira">
+      <img src="imagens/nokoira.jpg" alt="Nokoira" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">NOKOIRA</p>
+        <p class="card-chat-desc">INHAI BICHA CARALHOW, CÊ TÁ BOA? BORA JOGAR LOL NORMAL OU DE CARTAS MONA?</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.23s" data-name="pedrozero">
+      <img src="imagens/pedrozero.jpg" alt="Pedrozero" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">PEDROZERO</p>
+        <p class="card-chat-desc">Oh pants, oh pants, oh pants, oh pants, oh pants, oh pants, enfim, sobrinho do leoportomaia e tem que estudar pra geografia.</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.25s" data-name="baudino">
+      <img src="imagens/gengarbranco.jpg" alt="Baudino" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">BAUDINO?</p>
+        <p class="card-chat-desc">Quem é esse? nunca ouvi falar não, só sei que é o mau exemplo do jonas e sim, só ele conhece a Mia</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.27s" data-name="nabru">
+      <img src="imagens/nabru.png" alt="Nabru" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">NABRU</p>
+        <p class="card-chat-desc">A gatinha já tomou seu remedinho?</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.29s" data-name="juni">
+      <img src="imagens/juni.jpg" alt="Juni" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">JUNI</p>
+        <p class="card-chat-desc">Mozao do orenot, voz de mocinha indefesa e caçadora de leões</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.31s" data-name="orenot">
+      <img src="imagens/orenot.png" alt="Orenot" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">ORENOT</p>
+        <p class="card-chat-desc">Pai do Baudino, mozao do Juni, Futuro Mestre pokemon e te destrói no street fighter</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.33s" data-name="zeus">
+      <img src="imagens/Zeusao.jpeg" alt="Zeus" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">ZEUS</p>
+        <p class="card-chat-desc">Deus do trovão, quando chega meia noite bota as caras no chat, mas nunca pergunte a zeus o que aconteceu com o pants jogando gow</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.35s" data-name="ed">
+      <img src="imagens/Ed.gif" alt="Ed" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">ED</p>
+        <p class="card-chat-desc">!!!!!!!!!!!!!!!!!!!!!!!!!!!!<br>!!!!!!!!!!EXPLOSION!!!!!!!!!<br>!!!!!!!!!!!!!!!!!!!!!!!!!!!!</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.37s" data-name="petertech">
+      <img src="imagens/petertech.png" alt="Peter" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">PETERTECH</p>
+        <p class="card-chat-desc">Peter é tech, tech é agro, agro é pop</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.39s" data-name="asta">
+      <img src="imagens/asta.gif" alt="Asta" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">ASTA</p>
+        <p class="card-chat-desc">Cosplay de dora, a aventureira. Sempre perguntando algo</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.41s" data-name="canguru">
+      <img src="imagens/canguru.png" alt="Canguru" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">CANGURU</p>
+        <p class="card-chat-desc">A gravata diz tudo. É empresário e financia sub da rapaziada no chat</p>
+      </div>
+    </div>
+
+    <div class="card-chat" style="animation-delay:0.43s" data-name="cdm">
+      <img src="imagens/CDM.jpg" alt="Cdm" class="card-chat-img">
+      <div class="card-chat-body">
+        <p class="card-chat-nome">CDM</p>
+        <p class="card-chat-desc">PAI DO POKE BR e questiona ate hj como o pants morreu tão pouco no jogo, e é da tropa dos careca</p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="by-ed">By Ed (Sem GPT)</footer>
+
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById('navLinks').classList.toggle('open');
+}
+
+</script>
+
+</body>
+</html>
