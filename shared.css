@@ -189,7 +189,6 @@ a:hover { color: var(--pink); }
   animation: fadeInUp 0.5s ease both;
 }
 
-/* ── RESPONSIVE NAV ── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -197,6 +196,8 @@ a:hover { color: var(--pink); }
   cursor: pointer;
   margin-left: auto;
   padding: 8px;
+  z-index: 1001;
+  position: relative;
 }
 .hamburger span {
   width: 26px;
@@ -204,11 +205,12 @@ a:hover { color: var(--pink); }
   background: var(--cyan);
   border-radius: 2px;
   transition: all 0.3s;
+  display: block;
 }
 
 @media (max-width: 768px) {
   header { padding: 0 1rem; }
-  
+
   .hamburger { display: flex; }
 
   .nav-links {
@@ -216,8 +218,9 @@ a:hover { color: var(--pink); }
     top: 72px;
     left: 0;
     right: 0;
-    background: rgba(4,18,28,0.97);
+    background: rgba(4,18,28,0.98);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: stretch;
     padding: 1rem;
@@ -226,13 +229,18 @@ a:hover { color: var(--pink); }
     transform: translateY(-110%);
     transition: transform 0.3s ease;
     z-index: 999;
+    pointer-events: none;
   }
 
-  .nav-links.open { transform: translateY(0); }
+  .nav-links.open {
+    transform: translateY(0);
+    pointer-events: all;
+  }
 
   .nav-links a {
     padding: 0.75rem 1.25rem;
     font-size: 1.1rem;
+    display: block;
   }
 
   .page-content { padding: 1.5rem 1rem 3rem; }
